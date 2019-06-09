@@ -1,7 +1,6 @@
 import { ConnectProps, ConnectState } from '@/models/connect';
 import React, { Component } from 'react';
 import { Icon, Tooltip } from 'antd';
-import { formatMessage } from 'umi-plugin-react/locale';
 import HeaderSearch from '../HeaderSearch';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
@@ -27,20 +26,8 @@ class GlobalHeaderRight extends Component<GlobalHeaderRightProps> {
       <div className={className}>
         <HeaderSearch
           className={`${styles.action} ${styles.search}`}
-          placeholder={formatMessage({
-            id: 'component.globalHeader.search',
-          })}
-          dataSource={[
-            formatMessage({
-              id: 'component.globalHeader.search.example1',
-            }),
-            formatMessage({
-              id: 'component.globalHeader.search.example2',
-            }),
-            formatMessage({
-              id: 'component.globalHeader.search.example3',
-            }),
-          ]}
+          placeholder="站内搜索"
+          dataSource={['热点', '娱乐']}
           onSearch={value => {
             console.log('input', value); // tslint:disable-line no-console
           }}
@@ -48,11 +35,7 @@ class GlobalHeaderRight extends Component<GlobalHeaderRightProps> {
             console.log('enter', value); // tslint:disable-line no-console
           }}
         />
-        <Tooltip
-          title={formatMessage({
-            id: 'component.globalHeader.help',
-          })}
-        >
+        <Tooltip title="使用文档">
           <a
             target="_blank"
             href="https://pro.ant.design/docs/getting-started"

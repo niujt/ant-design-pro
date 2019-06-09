@@ -31,15 +31,7 @@ class AvatarDropdown extends React.Component<GlobalHeaderRightProps> {
     router.push(`/account/${key}`);
   };
   render() {
-    const { currentUser = {}, menu } = this.props;
-    if (!menu) {
-      return (
-        <span className={`${styles.action} ${styles.account}`}>
-          <Avatar size="small" className={styles.avatar} src={currentUser.avatar} alt="avatar" />
-          <span className={styles.name}>{currentUser.name}</span>
-        </span>
-      );
-    }
+    const { currentUser = {} } = this.props;
     const menuHeaderDropdown = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
         <Menu.Item key="center">
